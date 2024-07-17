@@ -1,0 +1,27 @@
+{
+  "name": "webigniter-net/laravel-client",
+  "description": "The official Webigniter client for Laravel",
+  "keywords": ["laravel", "Webigniter", "CMS"],
+  "homepage": "https://webigniter.net",
+  "type": "library",
+  "version": "1.0.1",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Webigniter\\LaravelClient\\": "src/"
+    }
+  },
+  "extra": {
+    "homepage": "https://webigniter.net",
+    "docs": "https://webigniter.net/documentation",
+    "laravel": {
+      "providers": [
+        "Webigniter\\LaravelClient\\WebigniterServiceProvider"
+      ]
+    }
+  },
+  "support": {
+    "email": "support@webigniter.net",
+    "docs": "https://webigniter.net/documentation"
+  }
+}
