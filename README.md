@@ -12,7 +12,7 @@ composer require webigniter-net/laravel-client
 
 ## Get a free license Key
 
-To generate a free license key, create a account at [Webigniter.net](https://webigniter.net/create-account). Then login to the CMS and head to 'License' and click 'show/hide license key'. For more information about the license key, visit the documentation page about [finding your license key](https://webigniter.net/documentation/getting-started/find-your-license-key)
+To generate a free license key, create an account at [Webigniter.net](https://webigniter.net/create-account). Then login to the CMS and head to 'License' and click 'show/hide license key'. For more information about the license key, visit the documentation page about [finding your license key](https://webigniter.net/documentation/getting-started/find-your-license-key)
 
 ## Setting Up License Key
 
