@@ -507,10 +507,10 @@ class WebigniterClient
 
     private function formsExtender(string $type, $formHandle): void
     {
-        $formsExtendLibrary = dirname(__FILE__).'/Extending/FormsExtend.php';
+        $formsExtendLibrary = app_path('/Extending/FormsExtend.php');
         if(is_file($formsExtendLibrary)){
             require_once($formsExtendLibrary);
-            $formsExtender = new FormsExtend($_POST, $this);
+            $formsExtender = new \App\Extending\FormsExtend($_POST, $this);
             $methodName = $type.'_'.$formHandle;
 
             if(method_exists($formsExtender, $methodName)){
