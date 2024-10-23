@@ -171,7 +171,7 @@ class WebigniterClient
         }
     }
 
-    public function getDatacollectionEntries(string $handle, bool $unpublished = false, string $orderBy = '', string $orderType = 'ASC', array $filterBy = [], array $filterValue = [], int $limit = 999999): array
+    public function getDatacollectionEntries(string $handle, bool $unpublished = false, string $orderBy = '', string $orderType = 'ASC', array $filterBy = [], array $filterValue = [], int $limit = 999999, int $offset = 0): array
     {
         $dataFields =
             [
@@ -181,16 +181,20 @@ class WebigniterClient
                 'orderType' => $orderType,
                 'filterBy' => serialize($filterBy),
                 'filterValues' => serialize($filterValue),
-                'limit' => $limit
+                'limit' => $limit,
+                'offset' => $offset
             ];
 
         $datacollectionEntries = $this->apiCall('getDatacollectionEntries', $dataFields);
 
-        if($datacollectionEntries['status'] == 404){
+        if($datacollectionEntries['status'] == 404)
+        {
             die("datacollection ".$handle." not found");
         }
 
-        $datacollectionEntriesArray = json_decode($datacollectionEntries['entries'], true);
+        $datacollectionEntriesArray['entries'] = json_decode($datacollectionEntries['entries'], true);
+        $datacollectionEntriesArray['numEntries'] = $datacollectionEntries['numEntries'];
+        $datacollectionEntriesArray['totalEntries'] = $datacollectionEntries['totalEntries'];
 
         return $datacollectionEntriesArray;
     }
